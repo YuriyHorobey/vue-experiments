@@ -1,6 +1,8 @@
-# test1
+# Loan Calculator
 
-> My super Nuxt.js project
+> Calculates mortgage for Ukrainian reality
+> First steps are hardcoded then using Store (Vuex?)
+> Then tep-by-step API (Express?)
 
 ## Build Setup
 

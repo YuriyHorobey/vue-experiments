@@ -6,9 +6,9 @@
         <label>Сума:</label>
         <input type="number" min="0" step="1000.00"></div>
       <div class="form-field">
+        <div id="pre-warning" v-html="current_min.msg"></div>
         <label>Початковий внесок:</label>
         <input name="preliminary" type="number" min="0" step="1000.00">
-        <div id="pre-warning"></div>
       </div>
       <div class="form-field">
         <label>Банк:</label>
@@ -26,7 +26,6 @@
         <button type="button" v-on:click="calc()">Розрахувати</button>
       </div>
     </form>
-    -{{banks.privat}}-
   </section>
 </template>
 
@@ -34,7 +33,15 @@
   export default {
     name: 'Calculator',
     data: () => {
+      let def_msg = `Як правило банк вимагає внести певний початковий внесок.
+                    <br>
+                    Це залежить від банку та програми кредитування.`;
       return {
+        current_min: {
+          msg: def_msg,
+          perc: 100,
+          sum: 0
+        },
         banks: {
           privat: {
             title: 'Приват Банк',
@@ -84,11 +91,26 @@
         console.log('CALC()', this)
       }
     }
+
   }
 </script>
 
 <style scoped>
+  form {
+    margin: 3em auto;
+    width: 50%;
+    min-width: 300px;
+  }
+
   #pre-warning {
-    display: none;
+    border: 1px solid orange;
+    padding: 1em;
+    margin: 1em 0;
+    display: block;
+  }
+
+  .form-field {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
   }
 </style>

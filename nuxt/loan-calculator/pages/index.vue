@@ -3,39 +3,16 @@
     <div>
       <logo/>
       <h1 class="title">
-        test1
+        Nuxt: Loan Calculator
       </h1>
-      <h2 class="subtitle">
-        My super Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a
-        >
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a
-        >
-        <nuxt-link to="/inner-page" class="button--grey">Some Inner Page</nuxt-link>
-        <nuxt-link to="/calculator" class="button--grey">Loan calculator</nuxt-link>
-      </div>
+      <nuxt-link to="/calculator" class="button--grey">1. Hardoced</nuxt-link>
     </div>
+
   </section>
 </template>
 
 <script>
-  import Logo from '~/components/Logo.vue'
 
-  export default {
-    components: {
-      Logo
-    }
-  }
 </script>
 
 <style>
